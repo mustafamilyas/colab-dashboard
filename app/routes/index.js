@@ -102,7 +102,7 @@ import Timeline from './Pages/Timeline';
 
 import Kitchen from './../pages/Kitchen';
 import Products from './../pages/Products';
-// import Kitchen from './../pages/Kitchen';
+import Materials from './../pages/Materials';
 // import Order from '../Pages/Order';
 
 import Icons from './Icons';
@@ -147,7 +147,7 @@ export const RoutedContent = () => {
             
             { /*    Cards Routes     */ }
             <PrivateRoute path='/products' exact component={Products} />
-            <PrivateRoute path='/materials' exact component={CardsHeaders} />
+            <PrivateRoute path='/materials' exact component={Materials} />
 
             { /*    Cards Routes     */ }
             <PrivateRoute path='/cards/cards' exact component={Cards} />
