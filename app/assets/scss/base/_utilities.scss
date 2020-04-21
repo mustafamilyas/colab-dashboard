@@ -1,0 +1,17 @@
+.bold {
+    font-weight: bold;
+}
+
+.row-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.disable {
+    display: none;
+}
+
+.blur {
+    filter: blur(2px);
+}

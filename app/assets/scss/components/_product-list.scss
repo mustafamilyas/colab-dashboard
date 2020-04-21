@@ -1,0 +1,20 @@
+.product-list {
+    width: 100%;
+    padding-left: $gutter-md;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-right: $gutter-md;
+        margin: $gutter-md 0 $gutter-sm 0;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: hidden;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}

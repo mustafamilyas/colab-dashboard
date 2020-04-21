@@ -1,0 +1,43 @@
+.order-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-white;
+    border-radius: .75rem;
+    overflow: hidden;
+
+    &:not(:last-child){
+        margin-bottom: $gutter-sm;
+    }
+
+    &__img-wrapper {
+        flex-basis: 20%;
+        height: 6rem;
+        border-radius: .75rem;
+        overflow: hidden;
+
+        img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        flex-basis: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: $gutter-xsm $gutter-sm;
+
+    }
+
+    &__name {
+        font-weight: bold;
+    }
+}

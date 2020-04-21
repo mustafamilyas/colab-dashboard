@@ -1,0 +1,171 @@
+.kitchen {
+    &-todo {
+        width: 20%;
+        height: 100%;
+        border: 1px solid #487C5B;
+        border-radius: .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        color: #487C5B;
+
+        &:not(:last-child) {
+            margin-right: 2vw;
+        }
+
+        &__number {
+            text-align: center;
+            background-color: #487C5B;
+            color: #FDE2CD;
+            padding: 1rem;
+            font-size: 2rem;
+            width: 100%;
+        }
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 1.5rem 3rem 1.5rem;
+            font-size: 2.5rem;
+            width: 100%;
+        }
+
+        &__item {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .25rem 1.5rem;
+            
+            &--done {
+                background: #FDE2CD;
+                border-radius: .25rem;
+            }
+
+            &-name {
+                font-weight: bold;
+            }
+
+            &-attr {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &--num {
+                    margin-right: 1.5rem;
+                    font-size: bold;
+                    color: grey;
+                    opacity: .5;
+                }
+            }
+        }
+
+        &__items {
+            height: 100%;
+            width: 100%;
+            font-size: 1.75rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+
+        &__action {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 1rem 1.5rem;
+
+            &-btn {
+                font-size: 2rem;
+                padding: 1rem;
+                background: none;
+                border: none;
+                border-radius: .5rem;
+
+                &--primary {
+                    width: 70%;
+                    font-weight: bold;
+                    background: #E95F83;
+                    color: white;
+                }
+
+                &--delete {
+                    border: 1px solid #E95F83;
+                    color: #E95F83;
+                }
+            }
+        }
+    }
+
+    &-queue {
+        width: 12.5%;
+        height: 100%;
+        border: 1px solid rgba(#487C5B, .3);
+        border-radius: .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        color: #487C5B;
+        background-color: white;
+
+        &:not(:last-child) {
+            margin-right: 1vw;
+        }
+
+        &__number {
+            background-color: #487C5B;
+            color: #FDE2CD;
+            font-size: 2rem;
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        &__content {
+            font-size: 2.5rem;
+            
+            div {
+                text-align: center;
+            }
+
+            div:first-child {
+                margin-bottom: .5rem;
+            }
+        }
+
+        &__action {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+
+            &-btn {
+                font-size: 2rem;
+                padding: 1rem;
+                background: none;
+                border: none;
+                border-radius: .5rem;
+                text-align: center;
+                
+                &--primary {
+                    width: 70%;
+                    font-weight: bold;
+                    background: #E95F83;
+                    color: white;
+                }
+
+                &--danger {
+                    border: 1px solid #E95F83;
+                    color: #E95F83;
+                }
+            }
+        }
+    }
+}

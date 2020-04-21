@@ -100,6 +100,9 @@ import Register from './Pages/Register';
 import Success from './Pages/Success';
 import Timeline from './Pages/Timeline';
 
+import Kitchen from './../pages/Kitchen';
+// import Order from '../Pages/Order';
+
 import Icons from './Icons';
 
 // ----------- Layout Imports ---------------
@@ -108,6 +111,7 @@ import { DefaultSidebar } from './../layout/components/DefaultSidebar';
 
 import { SidebarANavbar } from './../layout/components/SidebarANavbar';
 import { SidebarASidebar } from './../layout/components/SidebarASidebar';
+import KitchenContextProvider from '../contexts/KitchenContext';
 
 //------ Route Definitions --------
 // eslint-disable-next-line no-unused-vars
@@ -219,6 +223,13 @@ export const RoutedContent = () => {
             <Route component={ Success } path="/pages/success" />
             <Route component={ Timeline } path="/pages/timeline" />
 
+            <Route path="/kitchen">
+                <KitchenContextProvider>
+                    <Kitchen/>
+                </KitchenContextProvider>
+            </Route>
+            {/* <Route component={ Register } path="/register" /> */}
+            
             <Route component={ Login } path="/login" />
             <Route component={ Register } path="/register" />
 

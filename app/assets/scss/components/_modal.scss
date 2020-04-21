@@ -1,0 +1,164 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    // height: 100vh;
+    // width: 100vw;
+    // background-color: rgba(black,.3);
+    // filter: blur(2px);
+    z-index: 999;
+
+    &__background {
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(black,.3);
+        animation-name: opacity;
+        animation-duration: .5s;
+        animation-direction: alternate;
+    }
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 50rem;
+        max-height: 75vh;
+        background-color: white;
+        border-radius: 1rem;
+        padding: $gutter-bg $gutter-md;
+        @include flex-center;
+        animation-name: moveInBottomCenter;
+        animation-duration: .5s;
+        animation-delay: .5s;
+        animation-fill-mode: both;
+        animation-direction: alternate;
+    }
+
+    .popup-order {
+        @include flex-center;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .order {
+        &-intro {
+            &__input {
+                @include flex-center;
+                flex-direction: column;
+                width: 100%;
+                font-size: 1.6rem;
+                font-weight: bold;
+                margin-bottom: $gutter-bg;
+
+                input {
+                    margin-top: $gutter-sm;
+                    width: 100%;
+                    border: none;
+                    border-bottom: 1px solid rgba(black, .5);
+                    font-size: 2rem;
+                    text-align: center;
+                    padding: $gutter-xsm;
+                }
+            }
+
+            &__btn {
+                border: none;
+                width: 80%;
+                background-color: $color-secondary-dark;
+                color: $color-white;
+                font-size: 2rem;
+                font-weight: bold;
+                padding: $gutter-sm;
+                border-radius: .5rem;
+            }
+        }
+
+        &-confirm {
+            &__title {
+                font-weight: bold;
+                font-size: 2.5rem;
+                margin-bottom: $gutter-md;
+            }
+
+            &__summary {
+                overflow-y: auto;
+                height: 100%;
+            }
+
+            &__consument {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+            div:not(:first-child):not(:last-child){
+                margin-bottom: $gutter-sm;
+            }
+
+            &__btn {
+                &-group {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                padding: $gutter-sm;
+                font-size: 2rem;
+                font-weight: bold;
+                border:none;
+                border-radius: .5rem;   
+                
+                &--invert {
+                    background-color: $color-white;
+                    border: 1px solid $color-secondary-dark;
+                    color: $color-secondary-dark;
+                    flex-basis: 25%;
+                }
+
+                &--primary {
+                    background-color: $color-secondary-dark;
+                    color: $color-white;
+                    flex-basis: 70%;
+                }
+            }
+        }
+
+        &-success {
+            &__heading {
+                font-weight: bold;
+                font-size: 3rem;
+            }
+
+            &__subheading {
+                font-size: 1.6rem;
+            }
+
+            &__btn {
+                margin-top: $gutter-md;
+                border: none;
+                width: 80%;
+                background-color: $color-secondary-dark;
+                color: $color-white;
+                font-size: 2rem;
+                font-weight: bold;
+                padding: $gutter-sm;
+                border-radius: .5rem;
+            }
+
+            &__annotation {
+                margin-top: $gutter-md;
+                @include flex-center;
+                flex-direction: column;
+                background-color: rgba(grey,.15);
+                padding: $gutter-xsm $gutter-sm;
+                border-radius: .5rem;
+            }
+
+            &__number {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
