@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext,useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -15,8 +15,17 @@ import {
 
 import { HeaderAuth } from "../../components/Pages/HeaderAuth";
 import { FooterAuth } from "../../components/Pages/FooterAuth";
+import { AuthContext } from '../../../contexts/AuthContext';
 
-const Login = () => (
+const Login = () => {
+    const {login} = useContext(AuthContext);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        login({email, password})
+    }
+    return (
     <EmptyLayout>
         <EmptyLayout.Section center>
             { /* START Header */}
@@ -25,21 +34,35 @@ const Login = () => (
             />
             { /* END Header */}
             { /* START Form */}
-            <Form className="mb-3">
+            <Form className="mb-3" onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label for="emailAdress">
                         Email Adress
                     </Label>
-                    <Input type="email" name="email" id="emailAdress" placeholder="Enter email..." className="bg-white" />
+                    <Input 
+                        type="email" 
+                        name="email" 
+                        id="emailAdress" 
+                        value={email} 
+                        placeholder="Enter email..." 
+                        className="bg-white"
+                        onChange={e=>setEmail(e.target.value)} />
                     <FormText color="muted">
-                        We&amp;ll never share your email with anyone else.
+                        We'll never share your email with anyone else.
                     </FormText>
                 </FormGroup>
                 <FormGroup>
                     <Label for="password">
                         Password
                     </Label>
-                    <Input type="password" name="password" id="password" placeholder="Password..." className="bg-white" />
+                    <Input 
+                        type="password" 
+                        name="password" 
+                        id="password" 
+                        value={password} 
+                        placeholder="Password..." 
+                        className="bg-white"
+                        onChange={e=>setPassword(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <CustomInput type="checkbox" id="rememberPassword" label="Remember Password" inline />
@@ -47,7 +70,7 @@ const Login = () => (
                 <ThemeConsumer>
                 {
                     ({ color }) => (
-                        <Button color={ color } block tag={ Link } to="/">
+                        <Button color={ color } block >
                             Sign In
                         </Button>
                     )
@@ -69,7 +92,7 @@ const Login = () => (
             <FooterAuth />
             { /* END Footer */}
         </EmptyLayout.Section>
-    </EmptyLayout>
-);
+    </EmptyLayout>);
+}
 
 export default Login;

@@ -5,14 +5,18 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import AppLayout from './../../layout/default';
 import { RoutedContent } from './../../routes';
 
+import AuthContextProvider from '../../contexts/AuthContext';
+
 const basePath = process.env.BASE_PATH || '/';
 
 const AppClient = () => {
     return (
         <Router basename={ basePath }>
-            <AppLayout>
-                <RoutedContent />
-            </AppLayout>
+            <AuthContextProvider>
+                <AppLayout>
+                    <RoutedContent />
+                </AppLayout>
+            </AuthContextProvider>
         </Router>
     );
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { formatMoney } from "../utils/format";
+import { formatMoney } from "../../../utils/format";
 
 class OrderItem extends Component {
     render() { 
