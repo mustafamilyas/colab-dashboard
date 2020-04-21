@@ -13,7 +13,7 @@ import {
     AvatarAddOn,
     NavLink
 } from './../../../components';
-import { randomAvatar } from './../../../utilities';
+import { randomAvatar } from './../../../utils/random';
 
 const ChatLeftNav = () => (
     <React.Fragment>

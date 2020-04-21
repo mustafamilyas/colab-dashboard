@@ -13,7 +13,7 @@ import {
     UncontrolledDropdown,
     ThemeConsumer,
 } from './../../../../components';
-import { randomAvatar } from './../../../../utilities';
+import { randomAvatar } from './../../../../utils/random';
 
 import { NavbarActivityFeed } from
     './../../../../layout/components/NavbarActivityFeed';

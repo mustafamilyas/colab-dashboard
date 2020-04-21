@@ -12,7 +12,7 @@ import {
     Avatar,
     AvatarAddOn
 } from './../../../../components';
-import { randomAvatar } from './../../../../utilities';
+import { randomAvatar } from './../../../../utils/random';
 
 /*eslint-disable */
 const colorStatus = [

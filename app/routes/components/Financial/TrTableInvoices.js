@@ -7,7 +7,7 @@ import {
     AvatarAddOn
 } from './../../../components';
 
-import { randomAvatar } from './../../../utilities';
+import { randomAvatar } from './../../../utils/random';
 
 const TrTableInvoices = () => (
     <React.Fragment>

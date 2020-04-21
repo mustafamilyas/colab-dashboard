@@ -25,7 +25,7 @@ import {
     Badge,
     Avatar
 } from './../../../components';
-import { randomAvatar } from './../../../utilities';
+import { randomAvatar } from './../../../utils/random';
 import { HeaderMain } from "../../components/HeaderMain";
 import { ProjectsSmHeader } from "../../components/Projects/ProjectsSmHeader";
 import { Attachment } from "../../components/Attachment";

@@ -15,7 +15,7 @@ import {
 } from './../../../../components';
 import { CustomExportCSV } from './CustomExportButton';
 import { CustomSearch } from './CustomSearch';
-import { randomArray, randomAvatar } from './../../../../utilities';
+import { randomArray, randomAvatar } from './../../../../utils/random';
 
 const generateRow = (id) => ({
     id,

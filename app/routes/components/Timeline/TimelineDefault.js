@@ -3,7 +3,7 @@ import faker from 'faker/locale/en_US';
 import PropTypes from 'prop-types';
 
 
-import { randomArray } from './../../../utilities';
+import { randomArray } from './../../../utils/random';
 
 const hour = [
     "1",

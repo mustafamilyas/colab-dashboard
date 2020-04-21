@@ -17,7 +17,7 @@ import {
     Profile
 } from "./../Profile";
 
-import { randomArray } from './../../../utilities';
+import { randomArray } from './../../../utils/random';
 
 const badgesColors = [
     "info",

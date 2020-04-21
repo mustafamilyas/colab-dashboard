@@ -4,7 +4,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import cellEditFactory, { Type } from 'react-bootstrap-table2-editor';
 import faker from 'faker/locale/en_US';
 
-import { randomArray } from './../../../../utilities';
+import { randomArray } from './../../../../utils/random';
 
 const regions = [
     { value: 'Europe', label: 'Europe' },

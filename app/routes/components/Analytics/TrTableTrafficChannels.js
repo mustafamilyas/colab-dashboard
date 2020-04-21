@@ -7,7 +7,7 @@ import {
     AvatarAddOn
 } from './../../../components';
 
-import { randomArray } from './../../../utilities';
+import { randomArray } from './../../../utils/random';
 
 import {
     TinyAreaChart

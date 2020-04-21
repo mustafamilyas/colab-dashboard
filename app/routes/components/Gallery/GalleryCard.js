@@ -15,7 +15,7 @@ import {
     CardBody
 } from './../../../components';
 
-import { randomArray, randomAvatar } from './../../../utilities';
+import { randomArray, randomAvatar } from './../../../utils/random';
 
 const status = [
     "success",

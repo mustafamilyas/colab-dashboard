@@ -12,7 +12,7 @@ import {
     DropdownMenu,
     DropdownItem
 } from './../../../../components';
-import { randomAvatar } from './../../../../utilities';
+import { randomAvatar } from './../../../../utils/random';
 
 /*eslint-disable */
 const status = [

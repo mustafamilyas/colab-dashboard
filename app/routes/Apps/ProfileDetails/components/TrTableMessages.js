@@ -9,7 +9,7 @@ import {
     Media
 } from './../../../../components';
 
-import { randomArray } from './../../../../utilities';
+import { randomArray } from './../../../../utils/random';
 
 const status = [
     "warning",

@@ -8,7 +8,7 @@ import {
     Avatar,
     AvatarAddOn
 } from './../../../components';
-import { randomAvatar } from './../../../utilities';
+import { randomAvatar } from './../../../utils/random';
 
 const ProfileHeader = () => (
     <React.Fragment>

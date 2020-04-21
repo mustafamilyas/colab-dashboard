@@ -15,7 +15,7 @@ import {
     Avatar,
     AvatarAddOn
 } from './../../../../components';
-import { randomAvatar, randomArray } from './../../../../utilities';
+import { randomAvatar, randomArray } from './../../../../utils/random';
 import { reorder, move } from './utilities';
 import classes from './common.scss';
 

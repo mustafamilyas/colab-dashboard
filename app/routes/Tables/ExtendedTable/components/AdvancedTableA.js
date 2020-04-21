@@ -19,7 +19,7 @@ import { CustomSearch } from './CustomSearch';
 import { CustomPaginationPanel } from './CustomPaginationPanel';
 import { CustomSizePerPageButton } from './CustomSizePerPageButton';
 import { CustomPaginationTotal } from './CustomPaginationTotal';
-import { randomArray } from './../../../../utilities';
+import { randomArray } from './../../../../utils/random';
 import {
     buildCustomTextFilter,
     buildCustomSelectFilter,

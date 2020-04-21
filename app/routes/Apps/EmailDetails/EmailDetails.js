@@ -18,7 +18,7 @@ import {
     AvatarAddOn,
     UncontrolledTooltip
 } from './../../../components';
-import { randomAvatar } from './../../../utilities';
+import { randomAvatar } from './../../../utils/random';
 import { HeaderMain } from "../../components/HeaderMain";
 import { MailboxLeftNav } from "../../components/Mailbox/MailboxLeftNav";
 import { Attachment } from "../../components/Attachment";

@@ -24,7 +24,7 @@ import { NavbarUser } from './../../../layout/components/NavbarUser';
 import { NavbarNavigation } from './NavbarNavigation';
 import { DropdownProfile } from './../Dropdowns/DropdownProfile';
 
-import { randomAvatar } from './../../../utilities';
+import { randomAvatar } from './../../../utils/random';
 
 const NavbarExample = ({ themeColor, themeStyle, navStyle }) => {
     return (

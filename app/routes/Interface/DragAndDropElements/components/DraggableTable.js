@@ -20,7 +20,7 @@ import {
     CardHeader,
     CardTitle
 } from './../../../../components';
-import { randomAvatar, randomArray } from './../../../../utilities';
+import { randomAvatar, randomArray } from './../../../../utils/random';
 import { reorder } from './utilities';
 import classes from './common.scss';
 

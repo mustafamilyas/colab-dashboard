@@ -10,7 +10,7 @@ import {
     TinyAreaChart
 } from "./TinyAreaChart"
 
-import { randomArray } from './../../../../utilities';
+import { randomArray } from './../../../../utils/random';
 
 const percents = [
     "15",
