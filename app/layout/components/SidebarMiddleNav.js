@@ -16,6 +16,16 @@ export const SidebarMiddleNav = () => (
             <SidebarMenu.Item title="Stock" to='/dashboards/stock' exact />
             <SidebarMenu.Item title="Reports" to='/dashboards/reports' exact />
         </SidebarMenu.Item>
+        
+        { /* -------- Products ---------*/ }
+        <SidebarMenu.Item
+            icon={<i className="fa fa-fw fa-archive"></i>}
+            title="Goods"
+        >
+            <SidebarMenu.Item title="Products" to='/products' exact />
+            <SidebarMenu.Item title="Materials" to='/materials' exact />
+        </SidebarMenu.Item>
+
         <SidebarMenu.Item
             icon={<i className="fa fa-fw fa-th"></i>}
             title="Widgets"
@@ -43,7 +53,7 @@ export const SidebarMiddleNav = () => (
         { /* -------- Interface ---------*/ }
         <SidebarMenu.Item
             icon={<i className="fa fa-fw fa-toggle-on"></i>}
-            title="Interface"
+            title="Interface" 
         >
             <SidebarMenu.Item title="Colors" to='/interface/colors' />
             <SidebarMenu.Item title="Typography" to='/interface/typography' />
