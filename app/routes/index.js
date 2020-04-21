@@ -116,8 +116,6 @@ export const RoutedContent = () => {
         <Switch>
             <Redirect from="/" to="/dashboards/projects" exact />
             
-            <Route path='/login' exact component={Widgets} />
-
             <Route path="/dashboards/analytics" exact component={Analytics} />
             <Route path="/dashboards/projects" exact component={ProjectsDashboard} />
             <Route path="/dashboards/system" exact component={System} />
@@ -216,10 +214,13 @@ export const RoutedContent = () => {
             <Route component={ Error404 } path="/pages/error-404" />
             <Route component={ ForgotPassword } path="/pages/forgot-password" />
             <Route component={ LockScreen } path="/pages/lock-screen" />
-            <Route component={ Login } path="/pages/login" />
-            <Route component={ Register } path="/pages/register" />
+            {/* <Route component={ Login } path="/pages/login" />
+            <Route component={ Register } path="/pages/register" /> */}
             <Route component={ Success } path="/pages/success" />
             <Route component={ Timeline } path="/pages/timeline" />
+
+            <Route component={ Login } path="/login" />
+            <Route component={ Register } path="/register" />
 
             <Route path='/icons' exact component={Icons} />
 
