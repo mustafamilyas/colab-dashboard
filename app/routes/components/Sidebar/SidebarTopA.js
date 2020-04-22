@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import faker from 'faker/locale/en_US';
 import { Link } from 'react-router-dom';
 
@@ -13,9 +13,12 @@ import {
 } from './../../../components';
 import { randomAvatar } from './../../../utils/random';
 
+import { AuthContext } from '../../../contexts/AuthContext';
 const avatarImg = randomAvatar();
 
-const SidebarTopA = () => (
+const SidebarTopA = () => {
+    const {logout} = useContext(AuthContext);
+    return (
     <React.Fragment>
         { /* START: Sidebar Default */ }
         <Sidebar.HideSlim>
@@ -61,7 +64,7 @@ const SidebarTopA = () => (
                         Billings
                     </DropdownItem>
                     <DropdownItem divider />
-                    <DropdownItem tag={ Link } to="/pages/login">
+                    <DropdownItem tag={ Link } onClick={logout}>
                         <i className="fa fa-fw fa-sign-out mr-2"></i>
                         Sign Out
                     </DropdownItem>
@@ -97,6 +100,7 @@ const SidebarTopA = () => (
         </Sidebar.ShowSlim>
         { /* END: Sidebar Slim */ }
     </React.Fragment>
-)
+    )
+}
 
 export { SidebarTopA };

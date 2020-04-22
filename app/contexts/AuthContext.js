@@ -23,6 +23,7 @@ const AuthContextProvider = (props) => {
             password: ""
         })
         removeLocalStorage("auth");
+        history.push('/login');
     }
 
     const checklogin = () => {
