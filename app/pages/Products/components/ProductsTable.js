@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory, { Comparator, dateFilter } from 'react-bootstrap-table2-filter'
@@ -229,9 +230,10 @@ export class ProductsTable extends React.Component {
                                     <Button
                                         size="sm"
                                         outline
-                                        onClick={ this.handleAddRow.bind(this) }
                                     >
-                                        <i className="fa fa-fw fa-plus"></i>
+                                        <Link to="/products/create">
+                                            <i className="fa fa-fw fa-plus"></i>
+                                        </Link>
                                     </Button>
                                 </ButtonGroup>
                             </div>
