@@ -39,6 +39,8 @@ import UncontrolledModal from './UncontrolledModal';
 import UncontrolledPopover from './UncontrolledPopover';
 import UncontrolledTabs from './UncontrolledTabs';
 import Wizard from './Wizard';
+
+import {HeaderMain} from './Header/HeaderMain';
 // Export non overriden Reactstrap components
 export {
     Alert,
@@ -129,6 +131,7 @@ export {
     IconWithBadge,
     InputGroupAddon,
     HolderProvider,
+    HeaderMain,
     Layout,
     Nav,
     Navbar,

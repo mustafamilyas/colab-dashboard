@@ -102,6 +102,7 @@ import Timeline from './Pages/Timeline';
 
 import Kitchen from './../pages/Kitchen';
 import Products from './../pages/Products';
+import CreateProduct from './../pages/Products/Create';
 import Materials from './../pages/Materials';
 // import Order from '../Pages/Order';
 
@@ -147,6 +148,7 @@ export const RoutedContent = () => {
             
             { /*    Cards Routes     */ }
             <PrivateRoute path='/products' exact component={Products} />
+            <PrivateRoute path='/products/create' exact component={CreateProduct} />
             <PrivateRoute path='/materials' exact component={Materials} />
 
             { /*    Cards Routes     */ }
