@@ -28,12 +28,6 @@ import {
 
 const INITIAL_PRODUCTS_COUNT = 500;
 
-const ProductQuality = {
-    Good: 'product-quality__good',
-    Bad: 'product-quality__bad',
-    Unknown: 'product-quality__unknown'
-};
-
 const sortCaret = (order) => {
     if (!order)
         return <i className="fa fa-fw fa-sort text-muted"></i>;
@@ -44,11 +38,6 @@ const sortCaret = (order) => {
 const generateRow = (index) => ({
     id: index,
     name: faker.commerce.productName(),
-    quality: randomArray([
-        ProductQuality.Bad,
-        ProductQuality.Good,
-        ProductQuality.Unknown
-    ]),
     price: (1000 + Math.random() * 1000).toFixed(2),
     satisfaction: Math.round(Math.random() * 6),
     inStockDate: faker.date.past()
@@ -104,7 +93,6 @@ export class ProductsTable extends React.Component {
 
     handleResetFilters() {
         this.nameFilter('');
-        this.qualityFilter('');
         this.priceFilter('');
         this.satisfactionFilter('');
     }
@@ -138,49 +126,6 @@ export class ProductsTable extends React.Component {
             ...buildCustomTextFilter({
                 placeholder: 'Enter product name...',
                 getFilter: filter => { this.nameFilter = filter; }
-            })
-        }, {
-            dataField: 'quality',
-            text: 'Product Quality',
-            formatter: (cell) => {
-                let pqProps;
-                switch (cell) {
-                    case ProductQuality.Good:
-                        pqProps = {
-                            color: 'success',
-                            text: 'Good'
-                        }
-                    break;
-                    case ProductQuality.Bad:
-                        pqProps = {
-                            color: 'danger',
-                            text: 'Bad'
-                        }
-                    break;
-                    case ProductQuality.Unknown:
-                    default:
-                        pqProps = {
-                            color: 'secondary',
-                            text: 'Unknown'
-                        }
-                }
-
-                return (
-                    <Badge color={pqProps.color}>
-                        { pqProps.text }
-                    </Badge>
-                )
-            },
-            sort: true,
-            sortCaret,
-            ...buildCustomSelectFilter({
-                placeholder: 'Select Quality',
-                options: [
-                    { value: ProductQuality.Good, label: 'Good' },
-                    { value: ProductQuality.Bad, label: 'Bad' },
-                    { value: ProductQuality.Unknown, label: 'Unknown' }
-                ],
-                getFilter: filter => { this.qualityFilter = filter; }
             })
         }, {
             dataField: 'price',
