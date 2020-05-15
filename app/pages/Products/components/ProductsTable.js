@@ -21,6 +21,7 @@ import { CustomPaginationPanel } from './../../../routes/Tables/ExtendedTable/co
 import { CustomSizePerPageButton } from './../../../routes/Tables/ExtendedTable/components/CustomSizePerPageButton';
 import { CustomPaginationTotal } from './../../../routes/Tables/ExtendedTable/components/CustomPaginationTotal';
 import { randomArray } from './../../../utils/random';
+import { getMenu } from './../../../api/menu';
 import {
     buildCustomTextFilter,
     buildCustomSelectFilter,
@@ -49,7 +50,7 @@ export class ProductsTable extends React.Component {
         super();
         
         this.state = {
-            products: _.times(INITIAL_PRODUCTS_COUNT, generateRow),
+            products: [],
             selected: []
         };
 
@@ -165,6 +166,23 @@ export class ProductsTable extends React.Component {
             sortCaret
         }]; 
     }
+
+    // async componentDidMount(){
+    //     const self=this;
+    //     const response = await getMenu().then((resp)=>{
+    //         console.log(resp)
+    //         const products = resp.map(e=>(
+    //             {   
+    //                 ...e,
+    //                 satisfaction: Math.round(Math.random() * 6),
+    //                 inStockDate: faker.date.past()
+    //             })
+    //         )
+    //         console.log(products)
+    //         self.setState({products})
+    //         console.log('state',self.state.products)
+    //     });
+    // }
 
     render() {
         const columnDefs = this.createColumnDefinitions();
