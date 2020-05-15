@@ -16,15 +16,27 @@ import {
     Button,
     HeaderMain
 } from './../../components';
+import {createMenu} from '../../api/menu';
 
-const currencyMask = createNumberMask({ prefix: 'Rp. ' });
+const currencyMask = createNumberMask({ prefix: 'Rp.' });
 
-const CreateProduct = () => {
+const CreateProduct = ({history}) => {
     const [name, setName] = useState("")
     const [price, setPrice] = useState(0)
     const [category, setCategory] = useState("")
     const [description, setDescription] = useState("")
     const [active, setActive] = useState(false)
+
+    const handleSubmit = async function (e) {
+        e.preventDefault()
+        const payload = {
+            type: category,
+            status: active ? 'Available' : 'Unavailable',
+            price: price,
+            name: name
+        }
+        await createMenu(payload).then((response)=>history.push('/products'));
+    }
 
     return (
     <Container>
@@ -40,7 +52,7 @@ const CreateProduct = () => {
                             Product Information
                         </CardTitle>
                             { /* START Form */}
-                            <Form>
+                            <Form onSubmit={handleSubmit}>
                                 { /* START Input */}
                                 <FormGroup row>
                                     <Label for="input" sm={3}>
@@ -63,13 +75,15 @@ const CreateProduct = () => {
                                         Price
                                     </Label>
                                     <Col sm={9}>
-                                        <Input 
-                                            type="Number" 
+                                        <Input  
                                             name="price" 
                                             id="inputPrice"
                                             tag={ MaskedInput }
                                             mask={ currencyMask }
-                                            onChange={(e)=>setPrice(e.target.value)}
+                                            onChange={(e)=>{
+                                                const value = e.target.value.split(/[\s,.]+/).slice(1).join('') 
+                                                setPrice(parseInt(value))
+                                            }}
                                         />
                                     </Col>
                                 </FormGroup>
@@ -85,12 +99,14 @@ const CreateProduct = () => {
                                             type="select" 
                                             name="category" 
                                             id="category" 
-                                            onChange={(e)=>setCategory(e.target.value)}
+                                            onChange={(e)=>{
+                                                setCategory(e.target.value)
+                                            }}
                                         >
-                                            <option defaultValue="" disabled>Select Category</option>
-                                            <option>Food</option>
-                                            <option>Drink</option>
-                                            <option>Dessert</option>
+                                            <option default disabled>Select Category</option>
+                                            <option value='food'>Food</option>
+                                            <option value='drink'>Drink</option>
+                                            <option value='desert'>Dessert</option>
                                         </Input>
                                     </Col>
                                 </FormGroup>
